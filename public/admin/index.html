@@ -1,45 +1,12 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GoVal Blog Admin</title>
-  <link href="/admin/admin.css" rel="stylesheet">
-</head>
-<body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <!-- Custom styling for the admin interface -->
-  <script>
-    CMS.registerPreviewStyle("/admin/admin.css");
-
-    // Custom preview template for blog posts
-    var BlogPostPreview = createClass({
-      render: function() {
-        var entry = this.props.entry;
-        var title = entry.getIn(['data', 'title']);
-        var date = entry.getIn(['data', 'date']);
-        var body = this.props.widgetFor('body');
-        var category = entry.getIn(['data', 'category']);
-        var author = entry.getIn(['data', 'author']);
-
-        return h('div', {className: 'preview-container'},
-          h('header', {className: 'preview-header'},
-            category ? h('span', {className: 'preview-category'}, category) : null,
-            h('h1', {className: 'preview-title'}, title),
-            h('div', {className: 'preview-meta'},
-              h('time', {}, date ? date.toLocaleDateString() : ''),
-              author ? h('span', {}, ' by ' + author) : null
-            )
-          ),
-          h('div', {className: 'preview-content'}, body)
-        );
-      }
-    });
-
-    CMS.registerPreviewTemplate('blog', BlogPostPreview);
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/netlify-cms-app/dist/netlify-cms.js"></script>
+  </head>
+  <body>
+    <!-- Netlify CMS will attach here -->
+  </body>
 </html>
