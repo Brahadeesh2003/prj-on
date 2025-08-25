@@ -1,6 +1,7 @@
 backend:
   name: github
-  repo: your-github-username/goval-website
+  auth_endpoint: '/api/auth'        # ← MUST match your function URL
+  repo: brahadeesh2003/goval-website
   branch: main
 
 media_folder: "public/images/blog"
@@ -15,5 +16,5 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "select", options: ["Insights","Case Study","Tutorial"] }
+      - { label: "Category", name: "category", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
