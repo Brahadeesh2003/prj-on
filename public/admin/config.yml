@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: https://github.com/Brahadeesh2003/prj-on   # your repo
-  branch: main                               # or master
-  auth_scope: repo                                   
+  repo: brahadeesh2003/goval-website  # <– your GitHub repo
+  branch: main
+  auth_type: implicit
+
 media_folder: "public/images/blog"
 public_folder: "/images/blog"
 

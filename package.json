@@ -12,7 +12,8 @@
   "dependencies": {
     "@astrojs/node": "^9.4.3",
     "astro": "^5.13.3",
-    "decap-cms-app": "^3.8.3"
+    "decap-cms-app": "^3.8.3",
+    "netlify-cms-media-library-uploadcare": "^0.5.10"
   },
   "devDependencies": {
     "@types/node": "^20.0.0"
