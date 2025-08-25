@@ -44,7 +44,7 @@ function formatDate(date) {
           <article class="blog-card">
             <div class="blog-content">
               <h2 class="blog-title">
-                <a href={`/blog/${post.frontmatter.slug}`}>
+                <a href={`/blog/${post.frontmatter.slug || post.file.split('/').pop().replace('.md', '')}`}>
                   {post.frontmatter.title}
                 </a>
               </h2>
@@ -62,7 +62,7 @@ function formatDate(date) {
                 {post.frontmatter.excerpt || post.frontmatter.description}
               </p>
 
-              <a href={`/blog/${post.frontmatter.slug}`} class="read-more-link">
+              <a href={`/blog/${post.frontmatter.slug || post.file.split('/').pop().replace('.md', '')}`} class="read-more-link">
                 Read More
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -78,6 +78,7 @@ function formatDate(date) {
         <div class="no-posts">
           <h3>No blog posts yet</h3>
           <p>Check back soon for articles about paperless validation and digital transformation.</p>
+          <p><a href="/admin/" class="admin-link">Login to Admin Console</a> to create your first blog post.</p>
         </div>
       )}
     </div>
@@ -87,6 +88,22 @@ function formatDate(date) {
 </BaseLayout>
 
 <style>
+  /* CSS Variables */
+  :root {
+    --blue-primary: #6366f1;
+    --blue-secondary: #4f46e5;
+    --gray-900: #111827;
+    --gray-800: #1f2937;
+    --gray-700: #374151;
+    --gray-600: #4b5563;
+    --gray-500: #6b7280;
+    --gray-400: #9ca3af;
+    --gray-300: #d1d5db;
+    --gray-200: #e5e7eb;
+    --gray-100: #f3f4f6;
+    --gray-50: #f9fafb;
+  }
+
   /* Global White Background */
   html, body {
     background: #ffffff;
@@ -249,6 +266,16 @@ function formatDate(date) {
     color: var(--gray-900);
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  .admin-link {
+    color: var(--blue-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .admin-link:hover {
+    text-decoration: underline;
   }
 
   /* Mobile Responsive */
