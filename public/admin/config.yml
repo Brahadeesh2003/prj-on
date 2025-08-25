@@ -1,5 +1,5 @@
 backend:
-  name: Brahadeesh2003
+  name: github
   repo: https://github.com/Brahadeesh2003/prj-on   # your repo
   branch: main                               # or master
   auth_scope: repo                                   
